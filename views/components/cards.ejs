@@ -1,0 +1,20 @@
+<div class="card">
+    <div class="dropdown">
+        <div class="dropdown-button">
+            <i class="bi bi-three-dots-vertical"></i>
+        </div>
+        <div class="dropdown-content">
+            <a id="editar" href="/getById/<%= fil.id %>/put">Editar</a>
+            <a id="apagar" href="/getById/<%= fil.id %>/delete">Apagar</a>
+        </div>
+    </div>
+    <img src="<%= fil.imagem %>" alt="">
+    <h3>
+        <%= fil.titulo %>
+    </h3>
+    <p class="resumo">
+        <%= fil.resumo %>
+    </p>
+    <p>Classificacao: <%= fil.classificacao %>
+    </p>
+</div>

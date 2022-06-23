@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <%- include('./components/head') %>
+</head>
+
+<body>
+
+    <%- include('./components/nav') %>
+
+    <section id="cadastro">
+
+        <img src="/img/banner.jpg" alt="banner">
+
+        <div>
+            <% if(message != "") { %>
+                <%- include('./components/alerts') %>
+            <% } %>
+
+            <h2>QUER VER UM NOVO FILME POR AQUI?</h2>
+            <p>Manda pra gente!!</p>
+            <form action="/create" method="POST">
+    
+            <label for="titulo">Titulo: </label>
+            <input type="text" name="titulo" id="titulo" required>
+    
+            <label for="classificacao">Classificação: </label>
+            <input type="text" name="classificacao" id="classificacao" required>
+    
+            <label for="resumo">Resumo: </label>
+            <input type="text" name="resumo" id="resumo" required>
+    
+            <label for="imagem">Imagem: </label>
+            <input type="text" name="imagem" id="imagem" required>
+    
+            <button id="btnCadastrar" type="submit">Cadastrar</button>
+    
+            </form>
+        </div>
+
+    </section>
+
+    <%- include('./components/footer') %>
+    
+    <script src="/script.js"></script>
+</body>
+
+</html>

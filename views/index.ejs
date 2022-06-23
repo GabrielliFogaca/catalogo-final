@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <%- include('./components/head') %>
+</head>
+
+<body>
+
+    <%- include('./components/nav') %>
+
+    <% if (filmeSearch.length == 0) {%>
+        <header>
+            <img src="/img/banner.png" alt="banner">
+            <% if(message !="" ) { %>
+                <%- include('./components/alerts') %>
+                    <% } %>
+        </header>
+    <% } %>
+
+        <main>
+        
+        <% if (filmeSearch.length == 0) {%>
+            <section id='cards'>
+
+                <% gabflix.forEach((filme)=> { %>
+                    <%- include('./components/cards', {fil: filme})%>
+                <% }) %>
+
+            </section>
+
+
+        <% } else { %>
+
+            <div id="result-search-space">
+                <h2>Resultado da Pesquisa</h2>
+                <a href="/">Todos os filmes</a>
+            </div>
+
+            <section id='cards'>
+
+                <% filmeSearch.forEach((filme)=> { %>
+                    <%- include('./components/cards' , {fil: filme})%>
+                <% }) %>
+
+            </section>
+        <% } %>
+
+        </main>
+
+        <% if (filmePut !=null) {%>
+            <%- include('./components/modalPut') %>
+                <% } %>
+
+                    <% if (filmeDel !=null) {%>
+                        <%- include('./components/modalDel') %>
+                            <% } %>
+
+                                <%- include('./components/footer') %>
+
+                                    <script src="/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<section class="modal-overlay" id="ovarlay">
+    <div class="modal" id="modal">
+
+        <div class="modal-header">
+            <h3>Atualizar Filme</h3>
+            <a href="/" id="close-modal-put"><i class="bi bi-x"></i></a>
+        </div>
+
+        <div class="modal-body">
+            <form class="form-modal" action="/update/<%= filmePut.id %>" method="POST">
+
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" value="<%= filmePut.titulo %>">
+
+                <label for="classificacao">Classificação: </label>
+                <input type="text" id="classificacao" name="classificacao" value="<%= filmePut.classificacao %>">
+
+                <label for="categoria">Categoria: </label>
+                <input type="text" id="categoria" name="categoria" value="<%= filmePut.categoria %>">
+
+                <label for="resumo">Resumo: </label>
+                <input type="text" id="resumo" name="resumo" value="<%= filmePut.resumo %>">
+    
+                <label for="imagem">Link da Imagem</label>
+                <input type="text" id="imagem" name="imagem" value="<%= filmePut.imagem %>">
+
+                <button id="btnCadastrar" type="submit">Atualizar</button>
+
+            </form>
+        </div>
+
+    </div>        
+</section>
